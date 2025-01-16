@@ -1,0 +1,15 @@
+<igx-grid [data]="northwindSwaggerProductDto" primaryKey="productId" [rowEditable]="true" [allowFiltering]="true" filterMode="excelStyleFilter" class="grid">
+  <igx-column field="productId" dataType="number" header="productId" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+  <igx-column field="supplierId" dataType="number" header="supplierId" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+  <igx-column field="categoryId" dataType="number" header="categoryId" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+  <igx-column field="quantityPerUnit" dataType="string" header="quantityPerUnit" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+  <igx-column field="unitPrice" dataType="number" header="unitPrice" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+  <igx-column field="unitsInStock" dataType="number" header="unitsInStock" [filterable]="true" [sortable]="true" [selectable]="false">
+    <ng-template igxCellEditor let-cell="cell">
+      <igx-slider [(ngModel)]="cell.editValue" [minValue]="0" [maxValue]="100" [step]="10" [secondaryTickLabels]="false" class="slider"></igx-slider>
+    </ng-template>
+  </igx-column>
+  <igx-column field="unitsOnOrder" dataType="number" header="unitsOnOrder" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+  <igx-column field="reorderLevel" dataType="number" header="reorderLevel" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+  <igx-column field="discontinued" dataType="boolean" header="discontinued" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+</igx-grid>
